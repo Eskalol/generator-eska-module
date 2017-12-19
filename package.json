@@ -42,6 +42,7 @@
   "scripts": {
     "prepublish": "nsp check",
     "pretest": "eslint .",
+    "lint:fix": "eslint . --fix",
     "precommit": "lint-staged",
     "test": "jest"
   },
@@ -77,6 +78,7 @@
       "prettier"
     ]
   },
+  "eslintIgnore": ["**/templates/**", "__tests__/**/*.js"],
   "repository": "Eskalol/generator-eska-module",
   "license": "MIT"
 }

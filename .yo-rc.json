@@ -5,5 +5,12 @@
       "authorEmail": "eskil.nordland@gmail.com",
       "authorUrl": "https://github.com/Eskalol"
     }
+  },
+  "generator-eska-module": {
+    "promptValues": {
+      "authorName": "er",
+      "authorEmail": "egr",
+      "authorWebsite": "gr"
+    }
   }
 }

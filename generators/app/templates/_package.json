@@ -1,0 +1,44 @@
+{
+  "name": "<%= moduleName %>",
+  "version": "0.0.0",
+  "description": "<%= moduleDescription %>",
+  "license": "<%= license %>",
+  "repository": "<%= gitrepo %>",
+  "author": {
+    "name": "<%= authorName %>",
+    "email": "<%= authorEmail %>",
+    "url": "<%= authorWebsite %>"
+  },<% if (cli) { %>
+  "bin": "cli.js",<% } %>
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "coverage": "codecov",<% if (xo && !eslint) { %>
+    "lint": "xo", <% } %><% if (eslint) { %>
+    "lint": "eslint", <% } %><% if (jest && !ava) { %>
+    "test": "npm run lint && jest"<% } %><% if (ava) { %>
+    "test": "npm run lint && ava"<% } %>
+  },
+  "files": [
+    "index.js"<% if (cli) { %>,
+    "cli.js"<% } %>
+  ],
+  "keywords": [],
+  "dependencies": {<% if (cli) { %>
+    "meow": "^3.7.0"
+  <% } %>},
+  "devDependencies": {<% if (jest) { %>
+    "jest": "^22.0.3", <% } %><% if (ava) { %>
+    "ava": "^0.24.0",<% } %>
+    "codecov": "^2.2.0",<% if (ava) { %>
+    "nyc": "^11.0.0",<% } %>
+    "xo": "^0.18.2"
+  }<% if (ava) { %>,
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  }<% } %>
+}
