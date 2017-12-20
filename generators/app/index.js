@@ -74,7 +74,7 @@ module.exports = class extends Generator {
       },
       {
         type: 'input',
-        name: 'gitrepo',
+        name: 'gitRepo',
         message: 'Git repository url:',
         validate: x => (x.length > 0 ? true : 'You have to provide a git repository url.')
       },
