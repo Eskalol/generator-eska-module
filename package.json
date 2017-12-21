@@ -32,8 +32,9 @@
     "jest-cli": "^21.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
+    "generator-license": "^5.2.0",
+    "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
   },
   "jest": {
@@ -78,7 +79,10 @@
       "prettier"
     ]
   },
-  "eslintIgnore": ["**/templates/**", "__tests__/**/*.js"],
+  "eslintIgnore": [
+    "**/templates/**",
+    "__tests__/**/*.js"
+  ],
   "repository": "Eskalol/generator-eska-module",
   "license": "MIT"
 }

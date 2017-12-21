@@ -85,8 +85,16 @@ module.exports = class extends Generator {
         default: 'MIT',
         choices: [
           'MIT',
-          'Apache License 2.0 (Apache-2.0)',
-          'BSD 3-Clause License (Revised)'
+          'Apache 2.0',
+          'Mozilla Public License 2.0',
+          'BSD 2-Clause (FreeBSD) License',
+          'BSD 3-Clause (NewBSD) License',
+          'Internet Systems Consortium (ISC) License',
+          'GNU AGPL 3.0',
+          'GNU GPL 3.0',
+          'GNU LGPL 3.0',
+          'Unlicense',
+          'No License (Copyrighted)'
         ]
       },
       {
@@ -118,6 +126,15 @@ module.exports = class extends Generator {
       .then(props => {
         this.props = { ...this.props, ...props };
       });
+  }
+
+  default() {
+    this.composeWith(require.resolve('generator-license'), {
+      name: this.props.authorName,
+      email: this.props.authorEmail,
+      website: this.props.authorWebsite,
+      license: this.props.license
+    });
   }
 
   writing() {
@@ -161,10 +178,12 @@ module.exports = class extends Generator {
       );
     }
 
-    // This.fs.copy(
-    //   this.templatePath('dummyfile.txt'),
-    //   this.destinationPath('dummyfile.txt')
-    // );
+    if (this.props.cli) {
+      this.fs.copy(
+        this.templatePath('cli.js'),
+        this.destinationPath('cli.js')
+      );
+    }
   }
 
   install() {

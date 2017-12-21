@@ -39,7 +39,7 @@
     "eslint-config-airbnb": "^16.1.0",<% } %><% if (eslintGoogle) { %>
     "eslint-config-google": "^0.9.1",<% } %><% if (eslintStandard) { %>
     "eslint-config-standard": "^11.0.0-beta.0",<% } %>
-    "codecov": "^2.2.0",
+    "codecov": "^2.2.0"
   }<% if (ava) { %>,
   "nyc": {
     "reporter": [
