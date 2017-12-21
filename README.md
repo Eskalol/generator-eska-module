@@ -1,5 +1,5 @@
 # generator-eska-module
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![codecov percentage][codecov-image]][codecov-url]
 > Eskas node module generator
 
 ## Installation
@@ -45,11 +45,11 @@ yo eska-module
 MIT © [Eskil Opdahl Nordland](https://github.com/Eskalol)
 
 
-[npm-image]: https://badge.fury.io/js/generator-eska-module.svg
+[npm-image]: http://img.shields.io/npm/v/generator-eska-module.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/generator-eska-module
-[travis-image]: https://travis-ci.org/Eskalol/generator-eska-module.svg?branch=master
+[travis-image]: https://img.shields.io/travis/generator-eska-module.svg?style=flat-square
 [travis-url]: https://travis-ci.org/Eskalol/generator-eska-module
-[daviddm-image]: https://david-dm.org/Eskalol/generator-eska-module.svg?theme=shields.io
+[daviddm-image]: http://img.shields.io/david/generator-eska-module.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/Eskalol/generator-eska-module
-[coveralls-image]: https://coveralls.io/repos/Eskalol/generator-eska-module/badge.svg
-[coveralls-url]: https://coveralls.io/r/Eskalol/generator-eska-module
+[codecov-url]: https://codecov.io/gh/Eskalol/generator-eska-module
+[codecov-image]: https://img.shields.io/codecov/c/github/Eskalol/generator-eska-module.svg?style=flat-square
