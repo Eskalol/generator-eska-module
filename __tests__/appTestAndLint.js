@@ -93,7 +93,7 @@ describe('generated tests and linting', () => {
       await expect(
         inception.runAsyncCommand('npm', ['run', 'lint'], false)
       ).resolves.toBe(0);
-    });
+    }, 20000);
   });
 
   describe('eslint:airbnb', () => {
@@ -110,7 +110,7 @@ describe('generated tests and linting', () => {
 
     it('linting should pass', async () => {
       await expect(inception.runAsyncCommand('npm', ['run', 'lint'])).resolves.toBe(0);
-    });
+    }, 20000);
   });
 
   describe('eslint:standard', () => {
@@ -127,7 +127,7 @@ describe('generated tests and linting', () => {
 
     it('linting should pass', async () => {
       await expect(inception.runAsyncCommand('npm', ['run', 'lint'])).resolves.toBe(0);
-    });
+    }, 20000);
   });
 
   describe('xo linter', () => {
@@ -143,7 +143,7 @@ describe('generated tests and linting', () => {
 
     it('linting should pass', async () => {
       await expect(inception.runAsyncCommand('npm', ['run', 'lint'])).resolves.toBe(0);
-    });
+    }, 20000);
   });
 
   afterAll(() => {
