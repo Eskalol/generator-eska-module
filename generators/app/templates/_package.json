@@ -15,8 +15,8 @@
   },
   "scripts": {
     "coverage": "codecov",<% if (xo && !eslint) { %>
-    "lint": "xo", <% } %><% if (eslint) { %>
-    "lint": "eslint", <% } %><% if (jest && !ava) { %>
+    "lint": "xo .", <% } %><% if (eslint) { %>
+    "lint": "eslint .", <% } %><% if (jest && !ava) { %>
     "test": "npm run lint && jest"<% } %><% if (ava) { %>
     "test": "npm run lint && ava"<% } %>
   },
