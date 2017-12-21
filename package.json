@@ -16,6 +16,9 @@
     "",
     "yeoman-generator"
   ],
+  "engines": {
+    "node": ">=8"
+  },
   "devDependencies": {
     "codecov": "^3.0.0",
     "eslint": "^4.1.0",
