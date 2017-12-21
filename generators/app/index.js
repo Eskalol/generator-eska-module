@@ -157,6 +157,8 @@ module.exports = class extends Generator {
       tpl
     );
 
+    this.fs.copy(this.templatePath('index.js'), this.destinationPath('index.js'));
+
     if (eslint && eslintConfig === 'google') {
       this.fs.copy(
         this.templatePath('eslint(google)/eslintrc'),
@@ -179,10 +181,7 @@ module.exports = class extends Generator {
     }
 
     if (this.props.cli) {
-      this.fs.copy(
-        this.templatePath('cli.js'),
-        this.destinationPath('cli.js')
-      );
+      this.fs.copy(this.templatePath('cli.js'), this.destinationPath('cli.js'));
     }
   }
 

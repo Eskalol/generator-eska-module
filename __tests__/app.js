@@ -25,7 +25,8 @@ describe('generator-eska-module:app', () => {
       });
     });
     it('should create files', () => {
-      assert.file(['package.json', '.eslintrc']);
+      assert.file(['index.js', 'package.json', '.eslintrc']);
+      assert.noFile(['cli.js']);
     });
 
     it('package.json file should contain correct content', () => {
@@ -62,7 +63,7 @@ describe('generator-eska-module:app', () => {
       });
     });
     it('should create files', () => {
-      assert.file(['package.json', '.eslintrc']);
+      assert.file(['index.js', 'package.json', '.eslintrc', 'cli.js']);
     });
 
     it('package.json file should contain correct content', () => {
@@ -100,7 +101,8 @@ describe('generator-eska-module:app', () => {
     });
 
     it('should create files', () => {
-      assert.file(['package.json', '.eslintrc']);
+      assert.file(['index.js', 'package.json', '.eslintrc']);
+      assert.noFile(['cli.js']);
     });
 
     it('package.json file should contain correct content', () => {
@@ -122,7 +124,7 @@ describe('generator-eska-module:app', () => {
     });
 
     it('.eslintrc should contain correct content', () => {
-      assert.fileContent('.eslintrc', 'standard ');
+      assert.fileContent('.eslintrc', 'standard');
     });
   });
 
@@ -138,7 +140,7 @@ describe('generator-eska-module:app', () => {
     });
 
     it('should create files', () => {
-      assert.file(['package.json']);
+      assert.file(['index.js', 'package.json', 'cli.js']);
       assert.noFile(['.eslintrc']);
     });
 
