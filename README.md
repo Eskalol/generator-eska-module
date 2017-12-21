@@ -1,5 +1,6 @@
-# generator-eska-module [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Boilerplate simple node module generator
+# generator-eska-module
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+> Eskas node module generator
 
 ## Installation
 
@@ -15,6 +16,22 @@ Then generate your new project:
 ```bash
 yo eska-module
 ```
+
+## Supported Configurations
+* Linting
+  * `eslint`
+    * `google`
+    * `airbnb`
+    * `standard`
+  * `xo`
+
+* Testing
+  * `jest`
+  * `ava`
+
+* CI
+  * `travis-ci`
+    * `codecov`
 
 ## Getting To Know Yeoman
 

@@ -8,11 +8,16 @@
     "email": "eskil.nordland@gmail.com",
     "url": "https://github.com/Eskalol"
   },
-  "files": ["generators"],
+  "files": [
+    "generators"
+  ],
   "main": "generators/index.js",
-  "keywords": ["", "yeoman-generator"],
+  "keywords": [
+    "",
+    "yeoman-generator"
+  ],
   "devDependencies": {
-    "coveralls": "^2.13.1",
+    "codecov": "^3.0.0",
     "eslint": "^4.1.0",
     "eslint-config-prettier": "^2.4.0",
     "eslint-config-xo": "^0.18.2",
@@ -34,20 +39,32 @@
     "yosay": "^2.0.1"
   },
   "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
     "testEnvironment": "node"
   },
   "scripts": {
     "prepublish": "nsp check",
     "pretest": "rm -rf __tests__/tempDir && eslint . --fix",
     "lint:fix": "eslint . --fix",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "codecov"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
-    "extends": ["xo", "prettier"],
+    "extends": [
+      "xo",
+      "prettier"
+    ],
     "env": {
       "jest": true,
       "node": true
@@ -61,9 +78,14 @@
         }
       ]
     },
-    "plugins": ["prettier"]
+    "plugins": [
+      "prettier"
+    ]
   },
-  "eslintIgnore": ["**/templates/**", "__tests__/**/*.js"],
+  "eslintIgnore": [
+    "**/templates/**",
+    "__tests__/**/*.js"
+  ],
   "repository": "Eskalol/generator-eska-module",
   "license": "MIT"
 }

@@ -1,0 +1,13 @@
+.travis.yml
+__tests__
+.gitignore
+.editorconfig
+coverage
+.idea
+.DS_Store
+.git
+.eslintignore
+.gitattributes
+.yo-rc.json
+yarn.lock
+package-lock.json

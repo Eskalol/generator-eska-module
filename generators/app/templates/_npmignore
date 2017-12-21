@@ -1,0 +1,9 @@
+node_modules
+yarn.lock
+package-lock.json<% if (ava) { %>
+.nyc_output
+coverage<% } %><% if (jest) { %>
+coverage <% } %>
+__tests__
+.travis.yml
+.gitignore
