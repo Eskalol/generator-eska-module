@@ -9,7 +9,7 @@ const defaultPrompts = {
   authorName: 'cool',
   authorEmail: 'cool@example.com',
   authorWebsite: 'superAwesome.com',
-  gitRepo: 'myAwesome/repo.git',
+  gitRepo: 'https://github.com/myAwesome/repo.git',
   license: 'MIT'
 };
 
@@ -25,7 +25,7 @@ describe('generator-eska-module:app', () => {
       });
     });
     it('should create files', () => {
-      assert.file(['index.js', 'package.json', '.eslintrc']);
+      assert.file(['__tests__/index.js', 'index.js', 'package.json', '.eslintrc']);
       assert.noFile(['cli.js']);
     });
 
@@ -33,7 +33,10 @@ describe('generator-eska-module:app', () => {
       assert.fileContent('package.json', '"name": "test stuff"');
       assert.fileContent('package.json', '"description": "some awesome description"');
       assert.fileContent('package.json', '"license": "MIT"');
-      assert.fileContent('package.json', '"repository": "myAwesome/repo.git"');
+      assert.fileContent(
+        'package.json',
+        '"repository": "https://github.com/myAwesome/repo.git"'
+      );
       assert.fileContent('package.json', '"name": "cool"');
       assert.fileContent('package.json', '"email": "cool@example.com"');
       assert.fileContent('package.json', '"url": "superAwesome.com"');
@@ -50,6 +53,10 @@ describe('generator-eska-module:app', () => {
     it('.eslintrc should contain correct content', () => {
       assert.fileContent('.eslintrc', 'airbnb');
     });
+
+    it('test files should contain correct content', () => {
+      assert.fileContent('__tests__/index.js', 'describe');
+    });
   });
 
   describe('eslint:google, ava and cli', () => {
@@ -63,14 +70,23 @@ describe('generator-eska-module:app', () => {
       });
     });
     it('should create files', () => {
-      assert.file(['index.js', 'package.json', '.eslintrc', 'cli.js']);
+      assert.file([
+        '__tests__/index.js',
+        'index.js',
+        'package.json',
+        '.eslintrc',
+        'cli.js'
+      ]);
     });
 
     it('package.json file should contain correct content', () => {
       assert.fileContent('package.json', '"name": "test stuff"');
       assert.fileContent('package.json', '"description": "some awesome description"');
       assert.fileContent('package.json', '"license": "MIT"');
-      assert.fileContent('package.json', '"repository": "myAwesome/repo.git"');
+      assert.fileContent(
+        'package.json',
+        '"repository": "https://github.com/myAwesome/repo.git"'
+      );
       assert.fileContent('package.json', '"name": "cool"');
       assert.fileContent('package.json', '"email": "cool@example.com"');
       assert.fileContent('package.json', '"url": "superAwesome.com"');
@@ -87,6 +103,10 @@ describe('generator-eska-module:app', () => {
     it('.eslintrc should contain correct content', () => {
       assert.fileContent('.eslintrc', 'google');
     });
+
+    it('test files should contain correct content', () => {
+      assert.fileContent('__tests__/index.js', 'ava');
+    });
   });
 
   describe('eslint:standard, ava', () => {
@@ -101,7 +121,7 @@ describe('generator-eska-module:app', () => {
     });
 
     it('should create files', () => {
-      assert.file(['index.js', 'package.json', '.eslintrc']);
+      assert.file(['__tests__/index.js', 'index.js', 'package.json', '.eslintrc']);
       assert.noFile(['cli.js']);
     });
 
@@ -109,7 +129,10 @@ describe('generator-eska-module:app', () => {
       assert.fileContent('package.json', '"name": "test stuff"');
       assert.fileContent('package.json', '"description": "some awesome description"');
       assert.fileContent('package.json', '"license": "MIT"');
-      assert.fileContent('package.json', '"repository": "myAwesome/repo.git"');
+      assert.fileContent(
+        'package.json',
+        '"repository": "https://github.com/myAwesome/repo.git"'
+      );
       assert.fileContent('package.json', '"name": "cool"');
       assert.fileContent('package.json', '"email": "cool@example.com"');
       assert.fileContent('package.json', '"url": "superAwesome.com"');
@@ -126,6 +149,10 @@ describe('generator-eska-module:app', () => {
     it('.eslintrc should contain correct content', () => {
       assert.fileContent('.eslintrc', 'standard');
     });
+
+    it('test files should contain correct content', () => {
+      assert.fileContent('__tests__/index.js', 'ava');
+    });
   });
 
   describe('xo, jest and cli', () => {
@@ -140,7 +167,7 @@ describe('generator-eska-module:app', () => {
     });
 
     it('should create files', () => {
-      assert.file(['index.js', 'package.json', 'cli.js']);
+      assert.file(['__tests__/index.js', 'index.js', 'package.json', 'cli.js']);
       assert.noFile(['.eslintrc']);
     });
 
@@ -148,7 +175,10 @@ describe('generator-eska-module:app', () => {
       assert.fileContent('package.json', '"name": "test stuff"');
       assert.fileContent('package.json', '"description": "some awesome description"');
       assert.fileContent('package.json', '"license": "MIT"');
-      assert.fileContent('package.json', '"repository": "myAwesome/repo.git"');
+      assert.fileContent(
+        'package.json',
+        '"repository": "https://github.com/myAwesome/repo.git"'
+      );
       assert.fileContent('package.json', '"name": "cool"');
       assert.fileContent('package.json', '"email": "cool@example.com"');
       assert.fileContent('package.json', '"url": "superAwesome.com"');
@@ -160,6 +190,10 @@ describe('generator-eska-module:app', () => {
       assert.noFileContent('package.json', 'eslint-config-standard');
       assert.noFileContent('package.json', 'eslint');
       assert.noFileContent('package.json', 'ava');
+    });
+
+    it('test files should contain correct content', () => {
+      assert.fileContent('__tests__/index.js', 'describe');
     });
   });
 });

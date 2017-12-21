@@ -183,6 +183,20 @@ module.exports = class extends Generator {
     if (this.props.cli) {
       this.fs.copy(this.templatePath('cli.js'), this.destinationPath('cli.js'));
     }
+
+    if (this.props.tests === 'ava') {
+      this.fs.copy(
+        this.templatePath('__tests__(ava)'),
+        this.destinationPath('__tests__')
+      );
+    }
+
+    if (this.props.tests === 'jest') {
+      this.fs.copy(
+        this.templatePath('__tests__(jest)'),
+        this.destinationPath('__tests__')
+      );
+    }
   }
 
   install() {
