@@ -89,11 +89,15 @@ describe('generated tests and linting', () => {
         .then(() => done());
     }, 60000);
 
-    it('linting should pass', async () => {
-      await expect(
-        inception.runAsyncCommand('npm', ['run', 'lint'], false)
-      ).resolves.toBe(0);
-    }, 20000);
+    it(
+      'linting should pass',
+      async () => {
+        await expect(
+          inception.runAsyncCommand('npm', ['run', 'lint'], false)
+        ).resolves.toBe(0);
+      },
+      20000
+    );
   });
 
   describe('eslint:airbnb', () => {
@@ -108,9 +112,13 @@ describe('generated tests and linting', () => {
         .then(() => done());
     }, 60000);
 
-    it('linting should pass', async () => {
-      await expect(inception.runAsyncCommand('npm', ['run', 'lint'])).resolves.toBe(0);
-    }, 20000);
+    it(
+      'linting should pass',
+      async () => {
+        await expect(inception.runAsyncCommand('npm', ['run', 'lint'])).resolves.toBe(0);
+      },
+      20000
+    );
   });
 
   describe('eslint:standard', () => {
@@ -125,9 +133,13 @@ describe('generated tests and linting', () => {
         .then(() => done());
     }, 60000);
 
-    it('linting should pass', async () => {
-      await expect(inception.runAsyncCommand('npm', ['run', 'lint'])).resolves.toBe(0);
-    }, 20000);
+    it(
+      'linting should pass',
+      async () => {
+        await expect(inception.runAsyncCommand('npm', ['run', 'lint'])).resolves.toBe(0);
+      },
+      20000
+    );
   });
 
   describe('xo linter', () => {
@@ -141,9 +153,13 @@ describe('generated tests and linting', () => {
         .then(() => done());
     }, 60000);
 
-    it('linting should pass', async () => {
-      await expect(inception.runAsyncCommand('npm', ['run', 'lint'])).resolves.toBe(0);
-    }, 20000);
+    it(
+      'linting should pass',
+      async () => {
+        await expect(inception.runAsyncCommand('npm', ['run', 'lint'])).resolves.toBe(0);
+      },
+      20000
+    );
   });
 
   afterAll(() => {

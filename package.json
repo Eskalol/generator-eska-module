@@ -38,7 +38,7 @@
   },
   "scripts": {
     "prepublish": "nsp check",
-    "pretest": "eslint .",
+    "pretest": "rm -rf __tests__/tempDir && eslint . --fix",
     "lint:fix": "eslint . --fix",
     "test": "jest"
   },

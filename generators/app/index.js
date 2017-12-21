@@ -10,11 +10,11 @@ const slugify = text => {
     .replace(/\s+/g, '-');
 };
 
-// Const parseRepoName = url => {
-//   const regex = new RegExp(/(?:\.[a-z]+[\:|\/])(.+)(?:\.git)/); // eslint-disable-line no-useless-escape
-//   const match = String(url).match(regex);
-//   return match ? match[1] : '';
-// };
+const parseRepoName = url => {
+  const regex = new RegExp(/(?:\.[a-z]+[\:|\/])(.+)(?:\.git)/); // eslint-disable-line no-useless-escape
+  const match = String(url).match(regex);
+  return match ? match[1] : '';
+};
 
 module.exports = class extends Generator {
   prompting() {
@@ -148,7 +148,8 @@ module.exports = class extends Generator {
       eslint: this.props.linter === 'eslint',
       eslintGoogle: eslintConfig === 'google',
       eslintAirbnb: eslintConfig === 'airbnb',
-      eslintStandard: eslintConfig === 'standard'
+      eslintStandard: eslintConfig === 'standard',
+      repoName: parseRepoName(this.props.gitRepo)
     };
 
     this.fs.copyTpl(
@@ -157,12 +158,43 @@ module.exports = class extends Generator {
       tpl
     );
 
+    this.fs.copyTpl(
+      this.templatePath('_README.md'),
+      this.destinationPath('README.md'),
+      tpl
+    );
+
+    this.fs.copy(this.templatePath('_travis.yml'), this.destinationPath('.travis.yml'));
+
     this.fs.copy(this.templatePath('index.js'), this.destinationPath('index.js'));
+
+    this.fs.copyTpl(
+      this.templatePath('_gitignore'),
+      this.destinationPath('.gitignore'),
+      tpl
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_npmignore'),
+      this.destinationPath('.npmignore'),
+      tpl
+    );
+
+    this.fs.copy(this.templatePath('_npmrc'), this.destinationPath('.npmrc'));
+
+    this.fs.copy(
+      this.templatePath('gitattributes'),
+      this.destinationPath('.gitattributes')
+    );
 
     if (eslint && eslintConfig === 'google') {
       this.fs.copy(
         this.templatePath('eslint(google)/eslintrc'),
         this.destinationPath('.eslintrc')
+      );
+      this.fs.copy(
+        this.templatePath('eslint(google)/editorconfig'),
+        this.destinationPath('.editorconfig')
       );
     }
 
@@ -171,12 +203,27 @@ module.exports = class extends Generator {
         this.templatePath('eslint(airbnb)/eslintrc'),
         this.destinationPath('.eslintrc')
       );
+      this.fs.copy(
+        this.templatePath('eslint(airbnb)/editorconfig'),
+        this.destinationPath('.editorconfig')
+      );
     }
 
     if (eslint && eslintConfig === 'standard') {
       this.fs.copy(
         this.templatePath('eslint(standard)/eslintrc'),
         this.destinationPath('.eslintrc')
+      );
+      this.fs.copy(
+        this.templatePath('eslint(standard)/editorconfig'),
+        this.destinationPath('.editorconfig')
+      );
+    }
+
+    if (this.props.linter === 'xo') {
+      this.fs.copy(
+        this.templatePath('editorconfig(xo)'),
+        this.destinationPath('.editorconfig')
       );
     }
 

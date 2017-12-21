@@ -25,7 +25,19 @@ describe('generator-eska-module:app', () => {
       });
     });
     it('should create files', () => {
-      assert.file(['__tests__/index.js', 'index.js', 'package.json', '.eslintrc']);
+      assert.file([
+        'README.md',
+        '.gitattributes',
+        '.editorconfig',
+        '.npmignore',
+        '.gitignore',
+        '.npmrc',
+        '.travis.yml',
+        '__tests__/index.js',
+        'index.js',
+        'package.json',
+        '.eslintrc'
+      ]);
       assert.noFile(['cli.js']);
     });
 
@@ -71,6 +83,13 @@ describe('generator-eska-module:app', () => {
     });
     it('should create files', () => {
       assert.file([
+        'README.md',
+        '.gitattributes',
+        '.editorconfig',
+        '.npmignore',
+        '.gitignore',
+        '.npmrc',
+        '.travis.yml',
         '__tests__/index.js',
         'index.js',
         'package.json',
@@ -121,7 +140,19 @@ describe('generator-eska-module:app', () => {
     });
 
     it('should create files', () => {
-      assert.file(['__tests__/index.js', 'index.js', 'package.json', '.eslintrc']);
+      assert.file([
+        'README.md',
+        '.gitattributes',
+        '.editorconfig',
+        '.npmignore',
+        '.gitignore',
+        '.npmrc',
+        '.travis.yml',
+        '__tests__/index.js',
+        'index.js',
+        'package.json',
+        '.eslintrc'
+      ]);
       assert.noFile(['cli.js']);
     });
 
@@ -167,7 +198,19 @@ describe('generator-eska-module:app', () => {
     });
 
     it('should create files', () => {
-      assert.file(['__tests__/index.js', 'index.js', 'package.json', 'cli.js']);
+      assert.file([
+        'README.md',
+        '.gitattributes',
+        '.editorconfig',
+        '.npmignore',
+        '.gitignore',
+        '.npmrc',
+        '.travis.yml',
+        '__tests__/index.js',
+        'index.js',
+        'package.json',
+        'cli.js'
+      ]);
       assert.noFile(['.eslintrc']);
     });
 
@@ -194,6 +237,38 @@ describe('generator-eska-module:app', () => {
 
     it('test files should contain correct content', () => {
       assert.fileContent('__tests__/index.js', 'describe');
+    });
+  });
+
+  describe('README.md content', () => {
+    beforeAll(() => {
+      return helpers.run(path.join(__dirname, '../generators/app')).withPrompts({
+        ...defaultPrompts,
+        cli: true,
+        tests: 'jest',
+        linter: 'xo',
+        eslintConfig: 'standard'
+      });
+    });
+
+    it('should be created', () => {
+      assert.file(['README.md']);
+    });
+
+    it('should contain module name', () => {
+      assert.fileContent('README.md', defaultPrompts.moduleName);
+    });
+
+    it('should contain module description', () => {
+      assert.fileContent('README.md', defaultPrompts.moduleDescription);
+    });
+
+    it('should contain license', () => {
+      assert.fileContent('README.md', defaultPrompts.license);
+    });
+
+    it('should contain author name', () => {
+      assert.fileContent('README.md', defaultPrompts.authorName);
     });
   });
 });
