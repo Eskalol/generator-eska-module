@@ -190,7 +190,7 @@ module.exports = class extends Generator {
     if (eslint && eslintConfig === 'google') {
       this.fs.copy(
         this.templatePath('eslint(google)/eslintrc'),
-        this.destinationPath('.eslintrc')
+        this.destinationPath('.eslintrc.js')
       );
       this.fs.copy(
         this.templatePath('eslint(google)/editorconfig'),
@@ -201,7 +201,7 @@ module.exports = class extends Generator {
     if (eslint && eslintConfig === 'airbnb') {
       this.fs.copy(
         this.templatePath('eslint(airbnb)/eslintrc'),
-        this.destinationPath('.eslintrc')
+        this.destinationPath('.eslintrc.js')
       );
       this.fs.copy(
         this.templatePath('eslint(airbnb)/editorconfig'),
@@ -212,7 +212,7 @@ module.exports = class extends Generator {
     if (eslint && eslintConfig === 'standard') {
       this.fs.copy(
         this.templatePath('eslint(standard)/eslintrc'),
-        this.destinationPath('.eslintrc')
+        this.destinationPath('.eslintrc.js')
       );
       this.fs.copy(
         this.templatePath('eslint(standard)/editorconfig'),

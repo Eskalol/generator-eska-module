@@ -36,7 +36,7 @@ describe('generator-eska-module:app', () => {
         '__tests__/index.js',
         'index.js',
         'package.json',
-        '.eslintrc'
+        '.eslintrc.js'
       ]);
       assert.noFile(['cli.js']);
     });
@@ -62,8 +62,8 @@ describe('generator-eska-module:app', () => {
       assert.noFileContent('package.json', 'ava');
     });
 
-    it('.eslintrc should contain correct content', () => {
-      assert.fileContent('.eslintrc', 'airbnb');
+    it('.eslintrc.js should contain correct content', () => {
+      assert.fileContent('.eslintrc.js', 'airbnb');
     });
 
     it('test files should contain correct content', () => {
@@ -93,7 +93,7 @@ describe('generator-eska-module:app', () => {
         '__tests__/index.js',
         'index.js',
         'package.json',
-        '.eslintrc',
+        '.eslintrc.js',
         'cli.js'
       ]);
     });
@@ -119,8 +119,8 @@ describe('generator-eska-module:app', () => {
       assert.noFileContent('package.json', 'jest');
     });
 
-    it('.eslintrc should contain correct content', () => {
-      assert.fileContent('.eslintrc', 'google');
+    it('.eslintrc.js should contain correct content', () => {
+      assert.fileContent('.eslintrc.js', 'google');
     });
 
     it('test files should contain correct content', () => {
@@ -151,7 +151,7 @@ describe('generator-eska-module:app', () => {
         '__tests__/index.js',
         'index.js',
         'package.json',
-        '.eslintrc'
+        '.eslintrc.js'
       ]);
       assert.noFile(['cli.js']);
     });
@@ -177,8 +177,8 @@ describe('generator-eska-module:app', () => {
       assert.noFileContent('package.json', 'jest');
     });
 
-    it('.eslintrc should contain correct content', () => {
-      assert.fileContent('.eslintrc', 'standard');
+    it('.eslintrc.js should contain correct content', () => {
+      assert.fileContent('.eslintrc.js', 'standard');
     });
 
     it('test files should contain correct content', () => {
@@ -211,7 +211,7 @@ describe('generator-eska-module:app', () => {
         'package.json',
         'cli.js'
       ]);
-      assert.noFile(['.eslintrc']);
+      assert.noFile(['.eslintrc.js']);
     });
 
     it('package.json file should contain correct content', () => {
