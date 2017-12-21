@@ -34,11 +34,15 @@
     "ava": "^0.24.0",
     "nyc": "^11.0.0",<% } %><% if (xo) { %>
     "xo": "^0.18.2",<% } %><% if (eslint) { %>
-    "eslint": "^4.13.1",
-    "eslint-plugin-import": "^2.8.0",<% } %><% if (eslintAirbnb) { %>
-    "eslint-config-airbnb": "^16.1.0",<% } %><% if (eslintGoogle) { %>
+    "eslint": "^4.13.1",<% } %><% if (eslintAirbnb) { %>
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",<% } %><% if (eslintGoogle) { %>
     "eslint-config-google": "^0.9.1",<% } %><% if (eslintStandard) { %>
-    "eslint-config-standard": "^11.0.0-beta.0",<% } %>
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",<% } %>
     "codecov": "^2.2.0"
   }<% if (ava) { %>,
   "nyc": {
