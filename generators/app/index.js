@@ -121,13 +121,17 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    const eslintConfig = this.props.eslintConfig || '';
+    const eslint = this.props.linter === 'eslint';
     const tpl = {
-      eslintConfig: '',
       ...this.props,
       ava: this.props.tests === 'ava',
       jest: this.props.tests === 'jest',
       xo: this.props.linter === 'xo',
-      eslint: this.props.linter === 'eslint'
+      eslint: this.props.linter === 'eslint',
+      eslintGoogle: eslintConfig === 'google',
+      eslintAirbnb: eslintConfig === 'airbnb',
+      eslintStandard: eslintConfig === 'standard'
     };
 
     this.fs.copyTpl(
@@ -135,6 +139,27 @@ module.exports = class extends Generator {
       this.destinationPath('package.json'),
       tpl
     );
+
+    if (eslint && eslintConfig === 'google') {
+      this.fs.copy(
+        this.templatePath('eslint(google)/eslintrc'),
+        this.destinationPath('.eslintrc')
+      );
+    }
+
+    if (eslint && eslintConfig === 'airbnb') {
+      this.fs.copy(
+        this.templatePath('eslint(airbnb)/eslintrc'),
+        this.destinationPath('.eslintrc')
+      );
+    }
+
+    if (eslint && eslintConfig === 'standard') {
+      this.fs.copy(
+        this.templatePath('eslint(standard)/eslintrc'),
+        this.destinationPath('.eslintrc')
+      );
+    }
 
     // This.fs.copy(
     //   this.templatePath('dummyfile.txt'),

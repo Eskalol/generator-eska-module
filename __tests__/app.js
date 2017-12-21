@@ -25,10 +25,10 @@ describe('generator-eska-module:app', () => {
       });
     });
     it('should create files', () => {
-      assert.file(['package.json']);
+      assert.file(['package.json', '.eslintrc']);
     });
 
-    it('files should contain correct content', () => {
+    it('package.json file should contain correct content', () => {
       assert.fileContent('package.json', '"name": "test stuff"');
       assert.fileContent('package.json', '"description": "some awesome description"');
       assert.fileContent('package.json', '"license": "MIT"');
@@ -45,6 +45,10 @@ describe('generator-eska-module:app', () => {
       assert.noFileContent('package.json', 'xo');
       assert.noFileContent('package.json', 'ava');
     });
+
+    it('.eslintrc should contain correct content', () => {
+      assert.fileContent('.eslintrc', 'airbnb');
+    });
   });
 
   describe('eslint:google, ava and cli', () => {
@@ -58,10 +62,10 @@ describe('generator-eska-module:app', () => {
       });
     });
     it('should create files', () => {
-      assert.file(['package.json']);
+      assert.file(['package.json', '.eslintrc']);
     });
 
-    it('files should contain correct content', () => {
+    it('package.json file should contain correct content', () => {
       assert.fileContent('package.json', '"name": "test stuff"');
       assert.fileContent('package.json', '"description": "some awesome description"');
       assert.fileContent('package.json', '"license": "MIT"');
@@ -78,6 +82,10 @@ describe('generator-eska-module:app', () => {
       assert.noFileContent('package.json', 'xo');
       assert.noFileContent('package.json', 'jest');
     });
+
+    it('.eslintrc should contain correct content', () => {
+      assert.fileContent('.eslintrc', 'google');
+    });
   });
 
   describe('eslint:standard, ava', () => {
@@ -92,10 +100,10 @@ describe('generator-eska-module:app', () => {
     });
 
     it('should create files', () => {
-      assert.file(['package.json']);
+      assert.file(['package.json', '.eslintrc']);
     });
 
-    it('files should contain correct content', () => {
+    it('package.json file should contain correct content', () => {
       assert.fileContent('package.json', '"name": "test stuff"');
       assert.fileContent('package.json', '"description": "some awesome description"');
       assert.fileContent('package.json', '"license": "MIT"');
@@ -112,6 +120,10 @@ describe('generator-eska-module:app', () => {
       assert.noFileContent('package.json', 'xo');
       assert.noFileContent('package.json', 'jest');
     });
+
+    it('.eslintrc should contain correct content', () => {
+      assert.fileContent('.eslintrc', 'standard ');
+    });
   });
 
   describe('xo, jest and cli', () => {
@@ -127,9 +139,10 @@ describe('generator-eska-module:app', () => {
 
     it('should create files', () => {
       assert.file(['package.json']);
+      assert.noFile(['.eslintrc']);
     });
 
-    it('files should contain correct content', () => {
+    it('package.json file should contain correct content', () => {
       assert.fileContent('package.json', '"name": "test stuff"');
       assert.fileContent('package.json', '"description": "some awesome description"');
       assert.fileContent('package.json', '"license": "MIT"');

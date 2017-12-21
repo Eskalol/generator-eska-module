@@ -35,9 +35,9 @@
     "nyc": "^11.0.0",<% } %><% if (xo) { %>
     "xo": "^0.18.2",<% } %><% if (eslint) { %>
     "eslint": "^4.13.1",
-    "eslint-plugin-import": "^2.8.0",<% } %><% if (eslintConfig === 'airbnb') { %>
-    "eslint-config-airbnb": "^16.1.0",<% } %><% if (eslintConfig === 'google') { %>
-    "eslint-config-google": "^0.9.1",<% } %><% if (eslintConfig === 'standard') { %>
+    "eslint-plugin-import": "^2.8.0",<% } %><% if (eslintAirbnb) { %>
+    "eslint-config-airbnb": "^16.1.0",<% } %><% if (eslintGoogle) { %>
+    "eslint-config-google": "^0.9.1",<% } %><% if (eslintStandard) { %>
     "eslint-config-standard": "^11.0.0-beta.0",<% } %>
     "codecov": "^2.2.0",
   }<% if (ava) { %>,
