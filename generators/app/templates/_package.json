@@ -8,7 +8,8 @@
     "name": "<%= authorName %>",
     "email": "<%= authorEmail %>",
     "url": "<%= authorWebsite %>"
-  },<% if (cli) { %>
+  },
+  "main": "index.js",<% if (cli) { %>
   "bin": "cli.js",<% } %>
   "engines": {
     "node": ">=8"
