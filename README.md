@@ -47,9 +47,9 @@ MIT © [Eskil Opdahl Nordland](https://github.com/Eskalol)
 
 [npm-image]: http://img.shields.io/npm/v/generator-eska-module.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/generator-eska-module
-[travis-image]: https://img.shields.io/travis/generator-eska-module/master.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/Eskalol/generator-eska-module/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/Eskalol/generator-eska-module
-[daviddm-image]: http://img.shields.io/david/generator-eska-module.svg?style=flat-square
+[daviddm-image]: http://img.shields.io/david/Eskalol/generator-eska-module.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/Eskalol/generator-eska-module
 [codecov-url]: https://codecov.io/gh/Eskalol/generator-eska-module
 [codecov-image]: https://img.shields.io/codecov/c/github/Eskalol/generator-eska-module.svg?style=flat-square
