@@ -30,10 +30,15 @@
   <% } %>},
   "devDependencies": {<% if (jest) { %>
     "jest": "^22.0.3", <% } %><% if (ava) { %>
-    "ava": "^0.24.0",<% } %>
-    "codecov": "^2.2.0",<% if (ava) { %>
-    "nyc": "^11.0.0"<% } %><% if (xo) { %>,
-    "xo": "^0.18.2"<% } %>
+    "ava": "^0.24.0",
+    "nyc": "^11.0.0",<% } %><% if (xo) { %>
+    "xo": "^0.18.2",<% } %><% if (eslint) { %>
+    "eslint": "^4.13.1",
+    "eslint-plugin-import": "^2.8.0",<% } %><% if (eslintConfig === 'airbnb') { %>
+    "eslint-config-airbnb": "^16.1.0",<% } %><% if (eslintConfig === 'google') { %>
+    "eslint-config-google": "^0.9.1",<% } %><% if (eslintConfig === 'standard') { %>
+    "eslint-config-standard": "^11.0.0-beta.0",<% } %>
+    "codecov": "^2.2.0",
   }<% if (ava) { %>,
   "nyc": {
     "reporter": [

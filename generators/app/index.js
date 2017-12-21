@@ -122,17 +122,12 @@ module.exports = class extends Generator {
 
   writing() {
     const tpl = {
+      eslintConfig: '',
       ...this.props,
       ava: this.props.tests === 'ava',
       jest: this.props.tests === 'jest',
       xo: this.props.linter === 'xo',
-      eslint: this.props.linter === 'eslint',
-      eslintGoogle:
-        this.props.linter === 'eslint' && this.props.eslintConfig === 'google',
-      eslintAirbnb:
-        this.props.linter === 'eslint' && this.props.eslintConfig === 'airbnb',
-      eslintStandard:
-        this.props.linter === 'eslint' && this.props.eslintConfig === 'standard'
+      eslint: this.props.linter === 'eslint'
     };
 
     this.fs.copyTpl(

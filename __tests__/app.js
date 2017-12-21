@@ -21,7 +21,7 @@ describe('generator-eska-module:app', () => {
         cli: false,
         tests: 'jest',
         linter: 'eslint',
-        eslintConfing: 'airbnb'
+        eslintConfig: 'airbnb'
       });
     });
     it('should create files', () => {
@@ -38,6 +38,9 @@ describe('generator-eska-module:app', () => {
       assert.fileContent('package.json', '"url": "superAwesome.com"');
       assert.fileContent('package.json', 'jest');
       assert.fileContent('package.json', 'eslint');
+      assert.fileContent('package.json', 'eslint-config-airbnb');
+      assert.noFileContent('package.json', 'eslint-config-google');
+      assert.noFileContent('package.json', 'eslint-config-standard');
       assert.noFileContent('package.json', 'cli');
       assert.noFileContent('package.json', 'xo');
       assert.noFileContent('package.json', 'ava');
@@ -51,7 +54,7 @@ describe('generator-eska-module:app', () => {
         cli: true,
         tests: 'ava',
         linter: 'eslint',
-        eslintConfing: 'airbnb'
+        eslintConfig: 'google'
       });
     });
     it('should create files', () => {
@@ -69,6 +72,9 @@ describe('generator-eska-module:app', () => {
       assert.fileContent('package.json', 'ava');
       assert.fileContent('package.json', 'eslint');
       assert.fileContent('package.json', '"bin": "cli.js');
+      assert.fileContent('package.json', 'eslint-config-google');
+      assert.noFileContent('package.json', 'eslint-config-standard');
+      assert.noFileContent('package.json', 'eslint-config-airbnb');
       assert.noFileContent('package.json', 'xo');
       assert.noFileContent('package.json', 'jest');
     });
@@ -81,7 +87,7 @@ describe('generator-eska-module:app', () => {
         cli: false,
         tests: 'ava',
         linter: 'eslint',
-        eslintConfing: 'standard'
+        eslintConfig: 'standard'
       });
     });
 
@@ -99,6 +105,9 @@ describe('generator-eska-module:app', () => {
       assert.fileContent('package.json', '"url": "superAwesome.com"');
       assert.fileContent('package.json', 'ava');
       assert.fileContent('package.json', 'eslint');
+      assert.fileContent('package.json', 'eslint-config-standard');
+      assert.noFileContent('package.json', 'eslint-config-airbnb');
+      assert.noFileContent('package.json', 'eslint-config-google');
       assert.noFileContent('package.json', '"bin": "cli.js');
       assert.noFileContent('package.json', 'xo');
       assert.noFileContent('package.json', 'jest');
@@ -112,7 +121,7 @@ describe('generator-eska-module:app', () => {
         cli: true,
         tests: 'jest',
         linter: 'xo',
-        eslintConfing: 'standard'
+        eslintConfig: 'standard'
       });
     });
 
@@ -131,6 +140,9 @@ describe('generator-eska-module:app', () => {
       assert.fileContent('package.json', 'jest');
       assert.fileContent('package.json', 'xo');
       assert.fileContent('package.json', '"bin": "cli.js');
+      assert.noFileContent('package.json', 'eslint-config-airbnb');
+      assert.noFileContent('package.json', 'eslint-config-google');
+      assert.noFileContent('package.json', 'eslint-config-standard');
       assert.noFileContent('package.json', 'eslint');
       assert.noFileContent('package.json', 'ava');
     });
